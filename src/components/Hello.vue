@@ -1,12 +1,15 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h2>{{ message }}</h2>
+    <h3>{{ asyncMsg }}</h3>
   </div>
 </template>
 
 <script>
 export default {
   name: 'hello',
+  props: ['message', 'asyncMsg'],
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

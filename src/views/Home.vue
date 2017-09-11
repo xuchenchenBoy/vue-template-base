@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       header
-      <hello></hello>
+      <hello message="xuchenchen" :asyncMsg="asyncMsg"></hello>
     </div>
     <div>
       content
@@ -18,6 +18,9 @@
 import Hello from '../components/Hello.vue'
 
 export default {
+  data: {
+    asyncMsg: 'hell0!'
+  },
   components: {
     Hello
   }
