@@ -2,6 +2,7 @@
   <div>
     <div class="header">
       header
+      <hello></hello>
     </div>
     <div>
       content
@@ -12,14 +13,15 @@
   </div>
 </template>
 
-import Hello from '../components/Hello.vue';
 
 <script>
-  export default {
-    components: {
-   
-    }
+import Hello from '../components/Hello.vue'
+
+export default {
+  components: {
+    Hello
   }
+}
 </script>
 
 <style scoped>
