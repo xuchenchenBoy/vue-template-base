@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 @click="doThing">{{ msg }}</h1>
     <h2>{{ message }}</h2>
     <h3>{{ asyncMsg }}</h3>
   </div>
@@ -13,6 +13,11 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    doThing () {
+      console.log('click msg')
     }
   }
 }

@@ -5,7 +5,7 @@
       <hello message="xuchenchen" :asyncMsg="asyncMsg"></hello>
     </div>
     <div>
-      content
+      {{`content:${content}`}}
     </div>
     <div>
       footer
@@ -18,8 +18,11 @@
 import Hello from '../components/Hello.vue'
 
 export default {
-  data: {
-    asyncMsg: 'hell0!'
+  data () {
+    return {
+      asyncMsg: 'hell0!',
+      content: 'my profile'
+    }
   },
   components: {
     Hello
