@@ -10,8 +10,11 @@ const homeVuex = {
     decrement: state => state.count--
   },
   actions: { // actions,可以触发mutations
-    calcuate ({state, commit, rootState}, params) {
+    calcuateAdd ({state, commit, rootState}, params) {
       commit('increment')
+    },
+    calcuateDEC ({state, commit, rootState}, params) {
+      commit('decrement')
     }
   }
 }

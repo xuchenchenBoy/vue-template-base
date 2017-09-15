@@ -1,24 +1,20 @@
 <template>
   <div class="hello">
     <h1 @click="doThing">{{ msg }}</h1>
-    <h2>{{ message }}</h2>
-    <h3>{{ asyncMsg }}</h3>
   </div>
 </template>
 
 <script>
 export default {
   name: 'hello',
-  props: ['message', 'asyncMsg'],
   data () {
     return {
-      msg: 'content'
+      msg: 'Hello Vue'
     }
   },
   methods: {
     doThing () {
       console.log('click msg')
-      this.$emit('onToggleClick', 'do doThing')
     }
   }
 }
