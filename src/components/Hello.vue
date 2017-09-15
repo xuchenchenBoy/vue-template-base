@@ -18,6 +18,7 @@ export default {
   methods: {
     doThing () {
       console.log('click msg')
+      this.$emit('onToggleClick', 'do doThing')
     }
   }
 }

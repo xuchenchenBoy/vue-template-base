@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       header
-      <hello message="xuchenchen" :asyncMsg="asyncMsg"></hello>
+      <hello message="xuchenchen" :asyncMsg="asyncMsg" v-on:onToggleClick="onListenClick"></hello>
     </div>
     <div>
       {{`content:${content}`}}
@@ -24,8 +24,22 @@ export default {
       content: 'my profile'
     }
   },
+  created () {
+    console.log('create this  = ', this)
+  },
+  updated () {
+    console.log('updated')
+  },
+  destroyed () {
+    console.log('destroyed')
+  },
   components: {
     Hello
+  },
+  methods: {
+    onListenClick (msg) {
+      console.log('click parent = ', msg)
+    }
   }
 }
 </script>
