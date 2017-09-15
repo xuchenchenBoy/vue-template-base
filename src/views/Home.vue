@@ -5,23 +5,26 @@
       <hello message="xuchenchen" :asyncMsg="asyncMsg" v-on:onToggleClick="onListenClick"></hello>
     </div>
     <div>
-      {{`content:${content}`}}
+      {{`result-${content}`}}
     </div>
     <div>
-      footer
+      {{count}}
+    </div>
+    <div @click="doAction" class="tip">
+      click here
     </div>
   </div>
 </template>
 
-
 <script>
 import Hello from '../components/Hello.vue'
+import { mapState, mapGetters, mapActions } from 'vuex'
 
 export default {
   data () {
     return {
       asyncMsg: 'hell0!',
-      content: 'my profile'
+      content: 'count:'
     }
   },
   created () {
@@ -36,10 +39,17 @@ export default {
   components: {
     Hello
   },
+  computed: {
+    ...mapState({
+      count: (state) => state.homeVuex.count
+    }),
+    ...mapGetters(['getCount'])
+  },
   methods: {
-    onListenClick (msg) {
-      console.log('click parent = ', msg)
-    }
+    doAction () {
+      this.calcuate()
+    },
+    ...mapActions(['calcuate'])
   }
 }
 </script>
@@ -47,5 +57,8 @@ export default {
 <style scoped>
   .header {
     padding: 5px
+  }
+  .tip {
+    color: red;
   }
 </style>

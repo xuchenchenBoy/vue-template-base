@@ -3,13 +3,26 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Vuex from 'vuex'
+import homeVuex from './vuexs/home'
+import createLogger from 'vuex/dist/logger'
+import processMiddleware from './utils/middleWare'
 
 Vue.config.productionTip = false
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+  modules: {
+    homeVuex
+  },
+  plugins: [createLogger(), processMiddleware]
+})
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

@@ -12,7 +12,7 @@ export default {
   props: ['message', 'asyncMsg'],
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'content'
     }
   },
   methods: {
