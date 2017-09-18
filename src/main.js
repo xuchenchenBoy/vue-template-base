@@ -6,7 +6,6 @@ import router from './router'
 import Vuex from 'vuex'
 import homeVuex from './vuexs/home'
 import createLogger from 'vuex/dist/logger'
-import processMiddleware from './utils/middleWare'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
@@ -15,7 +14,7 @@ const store = new Vuex.Store({
   modules: {
     homeVuex
   },
-  plugins: [createLogger(), processMiddleware]
+  plugins: [createLogger()]
 })
 
 /* eslint-disable no-new */
