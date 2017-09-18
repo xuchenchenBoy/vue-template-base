@@ -14,7 +14,7 @@
       <span class="btn" @click="doDECAction">-</span>
     </div>
     <div @click="doRequest">
-      request status: {{status}}
+      click here to request status: {{status}}
     </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 const processMiddleware = (store) => {
-  console.log('processMiddleware')
+  console.log('processMiddleware', store)
 }
 
 export default processMiddleware
