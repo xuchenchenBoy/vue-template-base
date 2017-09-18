@@ -13,6 +13,9 @@
       <span class="btn" @click="doAddAction">+</span>
       <span class="btn" @click="doDECAction">-</span>
     </div>
+    <div @click="doRequest">
+      request status: {{status}}
+    </div>
   </div>
 </template>
 
@@ -26,7 +29,8 @@ export default {
   },
   computed: {
     ...mapState({
-      count: (state) => state.homeVuex.count
+      count: (state) => state.homeVuex.count,
+      status: (state) => state.homeVuex.status
     }),
     ...mapGetters(['getCount'])
   },
@@ -37,7 +41,10 @@ export default {
     doDECAction () {
       this.calcuateDEC()
     },
-    ...mapActions(['calcuateAdd', 'calcuateDEC'])
+    doRequest () {
+      this.requestStatus()
+    },
+    ...mapActions(['calcuateAdd', 'calcuateDEC', 'requestStatus'])
   }
 }
 </script>
