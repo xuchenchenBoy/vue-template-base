@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="header">
-      <hello></hello>
     </div>
     <div>
       count:
@@ -20,13 +19,9 @@
 </template>
 
 <script>
-import Hello from '../../components/Hello.vue'
 import { mapState, mapGetters, mapActions } from 'vuex'
 
 export default {
-  components: {
-    Hello
-  },
   computed: {
     ...mapState({
       count: (state) => state.homeVuex.count,
