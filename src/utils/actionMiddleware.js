@@ -12,6 +12,7 @@ const actionMiddleware = async (action, store) => {
       const res = await promise()
       store.commit(success, res)
     } catch (e) {
+      console.log('e=', e)
       store.commit(error)
     }
   } else {

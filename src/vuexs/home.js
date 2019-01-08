@@ -1,5 +1,5 @@
 import actionMiddleware from '@/utils/actionMiddleware'
-import request from '@/utils/request'
+import * as services from '@/service/home'
 
 const homeVuex = {
   state: {
@@ -20,8 +20,7 @@ const homeVuex = {
     requestStatus (store, params) {
       const action = {
         types: ['onLoading', 'onSuccess', 'onError'],
-        promise: request('your api'),
-        params
+        promise: services.getStatus(params)
       }
       actionMiddleware(action, store)
     },

@@ -1,8 +1,9 @@
 import qs from 'qs'
 import getWebOAuthUrl from '@/utils/wxAuth'
 import { getAuthority } from '@/utils/auth'
+import { baseUrl } from '@/utils/apiConfig'
 
-function request ({method, url, body}) {
+function request ({method, url, body = {}}) {
   return async () => {
     method = method.toLowerCase()
 
@@ -12,8 +13,11 @@ function request ({method, url, body}) {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'token': getAuthority()
-      },
-      credentials: 'omit'
+      }
+    }
+
+    if (!(/http/.test(url))) {
+      url = baseUrl + url
     }
 
     if (['get', 'jsonp'].indexOf(method) >= 0 && body) {
@@ -52,4 +56,13 @@ function request ({method, url, body}) {
   }
 }
 
+function postFetch (url, body) {
+  return request({ method: 'post', url, body })
+}
+
+function getFetch (url, body) {
+  return request({ method: 'get', url, body })
+}
+
 export default request
+export { postFetch, getFetch }
