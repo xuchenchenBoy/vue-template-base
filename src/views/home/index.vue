@@ -19,13 +19,14 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex'
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions, mapState, mapGetters, } = createNamespacedHelpers('homeVuex')
 
 export default {
   computed: {
     ...mapState({
-      count: (state) => state.homeVuex.count,
-      status: (state) => state.homeVuex.status
+      count: (state) => state.count,
+      status: (state) => state.status
     }),
     ...mapGetters(['getCount'])
   },
