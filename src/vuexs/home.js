@@ -2,6 +2,7 @@ import actionMiddleware from '@/utils/actionMiddleware'
 import * as services from '@/service/home'
 
 const homeVuex = {
+  namespaced: true,
   state: {
     count: 1,
     status: 'nothing status'
